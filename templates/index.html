@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="products-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p class="price">${{ product.price }}</p>
+        
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+            <input type="hidden" name="product_id" value="{{ product._id }}">
+            <input type="hidden" name="quantity" value="1"> <!-- Default quantity -->
+            <button type="submit">Add to Cart</button>
+        </form>
+        
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

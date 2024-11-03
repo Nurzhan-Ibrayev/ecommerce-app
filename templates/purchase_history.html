@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="purchase-history">
+    <h2>Purchase History</h2>
+    {% if purchases %}
+        <ul>
+            {% for purchase in purchases %}
+                <li>
+                    Product ID: {{ purchase.product_id }} - 
+                    Quantity: {{ purchase.quantity }} - 
+                    Date: {{ purchase.purchase_date.strftime('%Y-%m-%d %H:%M:%S') }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No purchases found.</p>
+    {% endif %}
+    
+    <h3>Available Products</h3>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} - ${{ product.price }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
