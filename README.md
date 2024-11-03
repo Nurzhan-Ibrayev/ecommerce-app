@@ -7,7 +7,8 @@ pip: Python package manager to install required libraries.
 
 ## Project Structure
 Ensure your project folder is structured as follows:
-No-sql/
+```
+ecommerce-app/
 │
 ├── app.py                   
 ├── requirements.txt         
@@ -20,8 +21,8 @@ No-sql/
 │   └── purchase_history.html
 ├── static/                  
 │   ├── css/style.css
-└── README.md   you can read there clear documentation 
-
+└── README.md 
+```
 ## Installation Steps
 
 ### Clone the Repository
